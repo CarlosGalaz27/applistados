@@ -1,0 +1,25 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Direccion</th>
+        <th scope="col">Telefonos</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let k of colegios | keys; let i = index ">
+        <td>{{i+1}}</td>
+        <td>{{colegios[k].nombre}}</td>
+        <td>{{colegios[k].direccion}}</td>
+        <td>{{colegios[k].telefonos}}</td>
+        <td>{{colegios[k].descripcion}}</td>
+        <td class = "sep">
+          <button type = "button" [routerLink]= "['/nuevo-colegio', k]" class = "btn btn-outline-success">Editar </button>
+          <button type = "button" (click)="borrarColegio(k)" class = "btn btn-outline-danger float-rigth sepiz ">Eliminar </button>
+        </td>
+        </tr>
+    </tbody>
+  </table>

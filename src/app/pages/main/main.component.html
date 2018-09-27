@@ -1,0 +1,43 @@
+
+<h2 class = "text-center">Ingresar Colegio</h2>
+<hr>
+<div class = "row">
+  <div class = "col-12" >
+    
+    <form (ngSubmit) = "guardar()" #forma = "ngForm">
+      <div class = "form-group">
+        <label>Nombre</label>
+        <input type = "text" name = "nombre" [(ngModel)] = "colegios.nombre"  class = "form-control" required>
+      </div>
+       
+      <div class = "form-group">
+        <label>Direccion</label>
+        <input type = "text" name = "direccion" [(ngModel)] = "colegios.direccion" class = "form-control" required>
+      </div>
+
+      <div class = "form-group">
+        <label>Telefonos</label>
+        <input type = "text" name = "telefonos" [(ngModel)] = "colegios.telefonos" class = "form-control" required>
+      </div>
+      
+      <div class = "form-group">
+          <label>Descripcion</label>
+          <textarea type = "text" name = "descripcion" [(ngModel)] = "colegios.descripcion" class = "form-control"></textarea> 
+      </div>
+
+      <div class = "form-group">
+          <button type = "submit" [disabled] = "!forma.valid"  class = "btn btn-outline-primary">
+            Guardar
+          </button> 
+
+          <button  type = "button" (click) = "limpiar(forma)" class = "btn btn-outline-danger float-right">
+            Limpiar
+          </button> 
+      </div>
+   
+    </form>
+
+  </div>  
+
+
+</div>
